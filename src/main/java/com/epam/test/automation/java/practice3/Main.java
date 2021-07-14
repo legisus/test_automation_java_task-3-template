@@ -15,10 +15,13 @@ public class Main {
         for (int i = 0; i < array.length / 2; i++) {
             int temp = array[i];
             // swap numbers
-            array[i] = array[array.length - 1 - i];
-            array[array.length - 1 - i] = temp;
+            if(i % 2 == 0) {
+                array[i] = array[array.length - 1 - i];
+                array[array.length - 1 - i] = temp;
+            }
         }
         return array;
+
     }
 
 
@@ -42,7 +45,10 @@ public class Main {
         throw new UnsupportedOperationException();
     }
 
-
+//    public static void main(String[] args) {
+//        int[] ints = {10, 5, 3, 4};
+//        System.out.println(task1(ints));
+//    }
 
     }
 
