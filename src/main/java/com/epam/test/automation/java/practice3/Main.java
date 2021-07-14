@@ -1,5 +1,9 @@
 package com.epam.test.automation.java.practice3;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
 
     /**
@@ -8,9 +12,15 @@ public class Main {
      * </summary>
      */
     public static int[] task1(int[] array) {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[i];
+            // swap numbers
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+        return array;
     }
+
 
     /**
      * <summary>
@@ -32,4 +42,7 @@ public class Main {
         throw new UnsupportedOperationException();
     }
 
-}
+
+
+    }
+
