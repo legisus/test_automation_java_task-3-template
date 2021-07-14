@@ -1,8 +1,7 @@
 package com.epam.test.automation.java.practice3;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -11,17 +10,16 @@ public class Main {
      * Implement code according to description of task 1.
      * </summary>
      */
-    public static int[] task1(int[] array) {
-        for (int i = 0; i < array.length / 2; i++) {
-            int temp = array[i];
-            // swap numbers
-            if(i % 2 == 0) {
-                array[i] = array[array.length - 1 - i];
-                array[array.length - 1 - i] = temp;
-            }
-        }
-        return array;
+    public static int[] task1(int[] arr) {
 
+        IntStream.range(0, arr.length / 2).forEach(i -> {
+            int temp = arr[i];
+            if (temp % 2 == 0 && (arr[arr.length - i - 1]) % 2==0) {
+                arr[i] = arr[arr.length - i - 1];
+                arr[arr.length - i - 1] = temp;
+            }
+        });
+        return arr;
     }
 
 
@@ -47,8 +45,15 @@ public class Main {
 
 //    public static void main(String[] args) {
 //        int[] ints = {10, 5, 3, 4};
-//        System.out.println(task1(ints));
+//        System.out.println("Before: 10, 5, 3, 4");
+//        System.out.println(Arrays.toString(task1(ints)));
+//        System.out.println("Before: 100, 2, 3, 4, 5");
+//        int[] ints2 = {100, 2, 3, 4, 5};
+//        System.out.println(Arrays.toString(task1(ints2)));
+//        System.out.println("Before: 100, 2, 3, 45, 33, 8, 4, 54");
+//        int[] ints3 = {100, 2, 3, 45, 33, 8, 4, 54};
+//        System.out.println(Arrays.toString(task1(ints3)));
 //    }
 
-    }
+}
 
