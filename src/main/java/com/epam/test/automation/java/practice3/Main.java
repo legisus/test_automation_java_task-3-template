@@ -62,7 +62,7 @@ public class Main {
             for (int j = 0; j < result[i].length; j++) {
                 if (i > j) {
                     result[i][j] = 0;
-                } if (i < j){
+                } else if  (i < j){
                     result[i][j] = 1;
                 }
             }
