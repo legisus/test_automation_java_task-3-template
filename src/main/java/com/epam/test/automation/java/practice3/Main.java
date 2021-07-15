@@ -60,10 +60,10 @@ public class Main {
 
         for (int i = 0; i < result.length; i++) {
             for (int j = 0; j < result[i].length; j++) {
-                if (i < j) {
-                    matrix[i][j] = 0;
-                } else {
-                    matrix[i][j] = 1;
+                if (i > j) {
+                    result[i][j] = 0;
+                } if (i < j){
+                    result[i][j] = 1;
                 }
             }
         }
