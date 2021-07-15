@@ -1,7 +1,5 @@
 package com.epam.test.automation.java.practice3;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -30,26 +28,23 @@ public class Main {
      * </summary>
      */
     public static int task2(int[] array) {
-        int result = Integer.MAX_VALUE;
-        int max_value = 0;
+        int result;
+        int maxValue = 0;
         int indexOfMaxValue = 0;
         int lastIndexMaxValue = 0;
 
         for (int i = 0; i < array.length; i++) {
-            if (max_value < array[i]) {
-                max_value = array[i];
-                indexOfMaxValue = i+1;
+            if (maxValue < array[i]) {
+                maxValue = array[i];
+                indexOfMaxValue = i + 1;
             }
             for (int j = i; j < array.length; j++) {
-                if(max_value == array[j]){
-                    lastIndexMaxValue = j+1;
+                if (maxValue == array[j]) {
+                    lastIndexMaxValue = j + 1;
                 }
-
             }
-
         }
         result = lastIndexMaxValue - indexOfMaxValue;
-
 
         return result;
     }
@@ -61,26 +56,20 @@ public class Main {
      * </summary>
      */
     public static int[][] task3(int[][] matrix) {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+        int[][] result = matrix;
+
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[i].length; j++) {
+                if (i < j) {
+                    matrix[i][j] = 0;
+                } else {
+                    matrix[i][j] = 1;
+                }
+            }
+        }
+        return result;
     }
-
-//    public static void main(String[] args) {
-//        int[] ints = {4, 100, 3, 4};
-//        System.out.println(task2(ints));
-//
-//
-//        int[] ints2 = {5, 50, 50, 4, 5};
-//        System.out.println(task2(ints2));
-//
-//        int[] ints3 = {5, 350, 350, 4, 350};
-//        System.out.println(task2(ints3));
-//
-//        int[] ints4 = {10, 10, 10, 10, 10};
-//        System.out.println(task2(ints4));
-//
-//
-//    }
-
 }
+
+
 
